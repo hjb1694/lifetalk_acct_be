@@ -17,7 +17,6 @@ async function init() {
 
     const onListenSuccess = () => {
         console.log(`Listening on port ${config.port}`);
-        onServerClose();
     }
 
     const onServerError = (err: NodeJS.ErrnoException) => {
@@ -25,13 +24,7 @@ async function init() {
         process.exit(0);
     }
 
-    const onServerClose = () => {
-        console.log('Connection Closed');
-        process.exit(0);
-    }
-
     svr.on('error', onServerError);
-    svr.on('close', onServerClose);
 
     await appDataSource.initialize();
 
@@ -39,7 +32,6 @@ async function init() {
 
     process.on('SIGTERM', () => {
         svr.close();
-        onServerClose();
     });
 
 }
