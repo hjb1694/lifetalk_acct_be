@@ -1,0 +1,28 @@
+{
+  "name": "lifetalk_account_backend",
+  "version": "0.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "start": "node ./dist/app.js",
+    "dev": "nodemon ./src/app.ts",
+    "build": "tsc -p ."
+  },
+  "author": "Hayden Bradfield",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/express": "^4.17.17",
+    "@types/node": "^20.6.0",
+    "nodemon": "^3.0.1",
+    "ts-node": "^10.9.1",
+    "typescript": "^5.2.2"
+  },
+  "dependencies": {
+    "dotenv": "^16.3.1",
+    "express": "^4.18.2",
+    "pg": "^8.11.3",
+    "reflect-metadata": "^0.1.13",
+    "typeorm": "^0.3.17",
+    "winston": "^3.10.0"
+  }
+}
