@@ -4,16 +4,17 @@ import config from "./config";
 import appDataSource from './database';
 import 'reflect-metadata';
 
+// Routers 
+import authRouter from "./routes/auth.router";
+
 async function init() {
 
     const app: Application = express();
     const svr: Server = createServer(app);
 
-    app.get('/', (req: Request, res: Response) => {
+    app.use(express.json());
 
-        res.send('<h1>Hello World!</h1>');
-
-    });
+    app.use('/api/auth', authRouter);
 
     const onListenSuccess = () => {
         console.log(`Listening on port ${config.port}`);
