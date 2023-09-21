@@ -16,12 +16,14 @@ interface DatabaseEnvConfig {
 
 interface Config {
     app_env: 'development' | 'production';
+    api_key: string;
     port: string;
     db: DatabaseEnvConfig;
 }
 
 export default <Config> {
     app_env: process.env.APP_ENV || 'development', 
+    api_key: process.env.API_KEY || 'someapikey',
     port: process.env.PORT || 3000, 
     db: {
         development: {
