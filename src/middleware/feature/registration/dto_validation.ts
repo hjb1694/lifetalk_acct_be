@@ -45,6 +45,8 @@ export default async function(req: Request, res: Response, next: NextFunction) {
 
         await validateOrReject(registrationDto);
 
+        next();
+
     }catch(e){
 
         return ResponseError.send(

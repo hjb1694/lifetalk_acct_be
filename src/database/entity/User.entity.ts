@@ -1,6 +1,6 @@
 import { Column, Entity, PrimaryGeneratedColumn } from "typeorm";
 
-enum UserRole {
+export enum UserRole {
     SYSTEM = 'SYSTEM',
     ADMINISTRATOR = 'ADMINISTRATOR', 
     STAFF = 'STAFF', 
@@ -10,7 +10,7 @@ enum UserRole {
     REGULAR_USER = 'REGULAR_USER'
 }
 
-enum UserStatus {
+export enum UserStatus {
     ACTIVE = 'ACTIVE', 
     BANNED = 'BANNED',
     FROZEN = 'FROZEN', 
